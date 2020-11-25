@@ -12,8 +12,20 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    public bool canMove;
     void Update()
     {
+            moveSpeed = 5f;
+         if(!canMove)
+        {
+            moveSpeed = 0f;
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Vertical", 0);
+            animator.SetFloat("Speed", 0);
+            return;
+            
+        }
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
