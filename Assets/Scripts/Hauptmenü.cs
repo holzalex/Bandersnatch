@@ -8,4 +8,9 @@ public class Hauptmenü : MonoBehaviour
     public void Spielstart() {
         SceneManager.LoadScene("HQ");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
