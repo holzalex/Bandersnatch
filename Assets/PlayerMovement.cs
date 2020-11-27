@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
 
     public bool canMove;
+
+    void Start(){
+        canMove = true;
+    }
     void Update()
     {
             moveSpeed = 5f;
