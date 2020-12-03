@@ -14,10 +14,4 @@ public string[] textLines;
       }
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
