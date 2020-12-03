@@ -6,6 +6,7 @@ public class KeyHolder : MonoBehaviour
 {
    
     private List<Key.KeyType> keyList;
+    public GameObject inventoryKey;
 
     public void Awake()
     {
@@ -16,11 +17,13 @@ public class KeyHolder : MonoBehaviour
     {
         Debug.Log("Added Key: " + keyType);
         keyList.Add(keyType);
+        inventoryKey.SetActive(true);
     }
 
-    public void RemoveKey(Key.KeyType keyType)
+   public void RemoveKey(Key.KeyType keyType)
     {
         keyList.Remove(keyType);
+        inventoryKey.SetActive(false);
     }
 
     public bool ContainsKey(Key.KeyType keyType)
