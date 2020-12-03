@@ -5,35 +5,20 @@ using UnityEngine;
 public class OldmanMovement : MonoBehaviour
 {
 
-    public float moveSpeed;
-
-    private Vector2 minWalkPoint;
-    private Vector2 maxWalkPoint;
-
-    public bool isWalking;
-
-    public float walkTime;
-    public float waitTime;
-
+    public float moveSpeed, walkTime, waitTime, walkCounter, waitCounter;
+    private Vector2 minWalkPoint, maxWalkPoint;
+    public bool isWalking, hasWalkZone, canWalk;
     private int WalkDirection;
-    private float walkCounter;
-    private float waitCounter;
     private Rigidbody2D myRigidbody; 
-
     public Collider2D walkZone;
-
-    private bool hasWalkZone;
-
     private Animator anim;
+    private DialogueManager dialogueManager;
     
-    public bool canWalk;
-
-    public TextBoxManager tbm;
 
     // Start is called before the first frame update
     void Start()
     {
-        tbm = FindObjectOfType<TextBoxManager>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
         canWalk = true;
         anim = GetComponent<Animator>();
 
@@ -56,6 +41,10 @@ public class OldmanMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!dialogueManager.dialogueActive)
+        {
+            canWalk = true;
+        }
         if(!canWalk){
             myRigidbody.velocity = Vector2.zero;
             anim.SetFloat("MoveX", 0);
