@@ -19,7 +19,7 @@ public class KeyHolder : MonoBehaviour
         keyList.Add(keyType);
         inventoryKey.SetActive(true);
     }
-
+ 
    public void RemoveKey(Key.KeyType keyType)
     {
         keyList.Remove(keyType);
