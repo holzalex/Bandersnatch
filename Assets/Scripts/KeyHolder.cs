@@ -6,6 +6,7 @@ public class KeyHolder : MonoBehaviour
 {
    
     private List<Key.KeyType> keyList;
+
     public GameObject inventoryKey;
 
     public void Awake()
@@ -17,12 +18,16 @@ public class KeyHolder : MonoBehaviour
     {
         Debug.Log("Added Key: " + keyType);
         keyList.Add(keyType);
+        
+        //Zeigt den aufgehobenen Key im Inventar an
         inventoryKey.SetActive(true);
     }
  
    public void RemoveKey(Key.KeyType keyType)
     {
         keyList.Remove(keyType);
+
+        //Setzt den Key vom Inventar unsichtbar
         inventoryKey.SetActive(false);
     }
 
@@ -31,16 +36,22 @@ public class KeyHolder : MonoBehaviour
         return keyList.Contains(keyType);
     }
 
+    //Umgang mit der Kollidierung des Spielers und dem Key, sowie der dazugehoerigen Door
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Key key = collider.GetComponent<Key>();
+        //Kollision zwischen Spieler und Key
         if (key != null)
         {
+            //Fuegt den Key einer Liste hinzu
             AddKey(key.GetKeyType());
+
+            //Entfernt den Key von der Map
             Destroy(key.gameObject);
         }
 
         KeyDoor keyDoor = collider.GetComponent<KeyDoor>();
+        //Kollision zwischen Spieler und Door
         if (keyDoor != null)
         {
             if (ContainsKey(keyDoor.GetKeyType()))

@@ -21,20 +21,26 @@ public class DialogueHolder : MonoBehaviour
         
     }
 
+    //Konfrontationsumgang zwischen dem NPC und dem Spieler
     void OnTriggerStay2D(Collider2D other)
     {
+        //UEberpruefung ob ein Spieler in der Kollider-Box ist
         if(other.name == "Player")
         {
+            //Enter-Taste wird gedrueckt
             if(Input.GetKeyUp(KeyCode.Return))
             {
+                //Oeffnung eines Dialoges
                 if(!dialogueManager.dialogueActive)
                 {
                     dialogueManager.dialogueLines = this.dialogueLines;
                     dialogueManager.currentLine = 0;
                     dialogueManager.ShowDialogue();
                 }
+                    //Ueberpruefung ob die Old-Man sich bewegt
                     if(transform.parent.GetComponent<OldmanMovement>() != null)
                     {
+                        //Bewegungseinschraenkung des Old-Man
                         transform.parent.GetComponent<OldmanMovement>().canWalk = false;
                     }
             }

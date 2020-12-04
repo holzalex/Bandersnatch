@@ -21,10 +21,12 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Anzeige der naechste Zeile des Dialoges
         if(dialogueActive && Input.GetKeyDown(KeyCode.Return))
         {
           currentLine++;
         }
+        //Ueberpruefung, ob der Dialog zuende ist
         if(currentLine >= dialogueLines.Length)
         {
               dialogueBox.SetActive(false);
@@ -33,12 +35,12 @@ public class DialogueManager : MonoBehaviour
               currentLine = 0;
               player.canMove = true;
         }
-
+        //Zeigt die aktuellen Zeilen des Dialoges an
         dialogueText.text = dialogueLines[currentLine];
     }
 
     
-
+    //Zeigt das Dialog an und beschraenkt den Spieler der Bewegung ein
     public void ShowDialogue()
     {
         player.canMove = false;

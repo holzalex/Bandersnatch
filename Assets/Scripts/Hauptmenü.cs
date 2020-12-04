@@ -8,14 +8,17 @@ public class Hauptmenü : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    //Laedt die HeadQuater-Szene
     public void Spielstart() {
         SceneManager.LoadScene("HQ");
     }
 
+    //Schließt das Spiel
     public void QuitGame()
     {
         Application.Quit();
     }
+    
     
     IEnumerator LoadLevel(int levelIndex)
     {
