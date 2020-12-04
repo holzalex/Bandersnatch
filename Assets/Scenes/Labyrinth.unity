@@ -49779,7 +49779,7 @@ GameObject:
   - component: {fileID: 1641760116}
   - component: {fileID: 1641760115}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Trutz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50182,7 +50182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2058948780947940756
 MonoBehaviour:
   m_ObjectHideFlags: 0
