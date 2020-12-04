@@ -167,9 +167,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: Hey Young Man, I have a Quest for you!
   dialogueLines:
-  - Hello
-  - How are you
-  - I like it here
+  - Oh Hallo
+  - Wer bist du denn ?
+  - Egal, Ich habe jemanden gesucht der mir helfen kann meine Muenzen wieder zu finden.
+  - Das wuerdest du doch sicher fuer einen alten Mann erledigen.
+  - Komm Wieder wenn du die Muenzen hast.
 --- !u!61 &127500407
 BoxCollider2D:
   m_ObjectHideFlags: 0
