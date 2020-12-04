@@ -18,6 +18,7 @@ public class PausenMenü : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    // Escape Taste startet oder beendet das Pausemenü
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(istPausiert)
@@ -27,23 +28,26 @@ public class PausenMenü : MonoBehaviour
                 PausiereGame();
         }
     }
-
+    
     public void PausiereGame()
     {
         pausenMenue.SetActive(true);
+    // Friert die Zeit ein
         Time.timeScale = 0f;
         istPausiert = true;
     }
-
+    
     public void WiedergabeGame()
     {
         pausenMenue.SetActive(false);
+    // Stellt Zeit auf den Norm
         Time.timeScale = 1f;
         istPausiert = false;
     }
 
     public void HQLoader()
     {
+    // Wechselt Szene zu "HQ"
         SceneManager.LoadScene("HQ");
         Time.timeScale = 1f;
         istPausiert = false;
@@ -51,6 +55,7 @@ public class PausenMenü : MonoBehaviour
 
     public void HauptmenueLoader()
     {
+    // Wechselt Szene zu "Hauptmenü"
         SceneManager.LoadScene("Hauptmenü");
         Time.timeScale = 1f;
         istPausiert = false;

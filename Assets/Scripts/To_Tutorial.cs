@@ -10,12 +10,14 @@ public class To_Tutorial : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+    // Setzt Tutorial auf den Index der Tutorial Szene
         Tutorial = SceneManager.GetActiveScene().buildIndex - 1;
     }
 
-    // Update is called once per frame
+    // Sobald der 2D Collider betreten wird, wird die Szene am Index "Tutorial" geladen
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         SceneManager.LoadScene(Tutorial);
     }
 }

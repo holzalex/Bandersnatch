@@ -17,6 +17,7 @@ public class BirdKills : MonoBehaviour
         text = FindObjectOfType<DestroyText>();
     }
 
+    // Sobald der 2D Collider betreten wird, wird das Level Neugeladen
     public void OnTriggerEnter2D(Collider2D collision)
     {
         ResetLevel();

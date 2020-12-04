@@ -11,15 +11,17 @@ public class QuestManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    // Speichert alle Fertigen Quests
         questCompleted = new bool[quests.Length];
     }
 
-    // Update is called once per frame
+    // Update is called once per frame/ Zurzeit noch nicht verwendet
     void Update()
     {
         
     }
 
+    // Gibt den Questtext aus
     public void showQuestText(string questText)
     {
         
