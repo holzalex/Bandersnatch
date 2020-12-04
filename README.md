@@ -1,1 +1,4 @@
 # Bandersnatch
+
+##Story:
+Du bist ein Held, aus einer unbekannten Welt. Eine Mysteriöse Kraft führt dich in den Wald. Du fällst in eine Hasenhöhle und kommst plötzlich in einer anderen Welt an. Diese Welt nicht besonders anders als die Welt aus der du stammst. Jedoch herrscht in dieser Welt ein böser Magier mit dem Namen „Zehenbusch“ und seinen Handlangern „die Trutzes“. Diese Welt haben schon viele Helden vor dir Betreten und haben sie nie verlassen. Diese Mysteriöse Kraft heißt „Mi Kurs“ und wird unerbittlich von Zehenbusch und seinen Schergen unterdrückt. Zehenbusch hat einen Schwachpunkt und zwar die mächtigen „IT-Coins“ mit ihnen kannst du Zehenbusch besiegen. Die Coins wurden von den Trutzes in sehr schwere Dungeons versteckt. Ein alter Mann mit dem Namen „Schleier_NPC“ ist ein ehemaliger Held, der sich hier niedergelassen hat und will nun neuen Helden Helfen, jedoch ist er etwas Verrückt geworden und gibt dir auch Rätzel.  
