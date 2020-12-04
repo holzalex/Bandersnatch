@@ -30,7 +30,6 @@ public class OldmanMovement : MonoBehaviour
         walkCounter = walkTime;
         
         ChooseDirection();
-    // Legt eine Zone fest in der ein NPC laufen kann, wenn vorhanden
         if(walkZone != null)
         {
             minWalkPoint = walkZone.bounds.min;
@@ -42,12 +41,10 @@ public class OldmanMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    // Wenn kein Dialog aktiv ist, darf der NPC herumlaufen
         if(!dialogueManager.dialogueActive)
         {
             canWalk = true;
         }
-    // sonst setze Geschwindigkeit auf 0
         if(!canWalk){
             myRigidbody.velocity = Vector2.zero;
             anim.SetFloat("MoveX", 0);
@@ -55,21 +52,19 @@ public class OldmanMovement : MonoBehaviour
             return;
         }
             
-        Vector2 v2 = myRigidbody.velocity;
-        anim.SetFloat("MoveX", v2.x);
-        anim.SetFloat("MoveY", v2.y);
-        
+        Vector3 v3 = myRigidbody.velocity;
+        anim.SetFloat("MoveX", v3.x);
+        anim.SetFloat("MoveY", v3.y);
         if(isWalking){
-    // Sekundenzähler
             walkCounter -= Time.deltaTime;
-    // Sobald Zähler auf 0 ist, starte Wartezähler      !!
+
             if(walkCounter < 0){
                 isWalking = false;
                 waitCounter = waitTime;
             }
-    // NPC sucht sich eine Richtung aus in die er läuft 
+
             switch(WalkDirection){
-                case 0: // oben
+                case 0:
                     myRigidbody.velocity = new Vector2(0, moveSpeed);
                     if(hasWalkZone && transform.position.y > maxWalkPoint.y)
                     {
@@ -78,7 +73,7 @@ public class OldmanMovement : MonoBehaviour
                     }
                 break;
 
-                case 1: // rechts
+                case 1:
                     myRigidbody.velocity = new Vector2(moveSpeed, 0);
                       if(hasWalkZone && transform.position.x > maxWalkPoint.x)
                     {
@@ -87,7 +82,7 @@ public class OldmanMovement : MonoBehaviour
                     }
                 break;
 
-                case 2: // unten
+                case 2:
                     myRigidbody.velocity = new Vector2(0, -moveSpeed);
                       if(hasWalkZone && transform.position.y < minWalkPoint.y)
                     {
@@ -96,7 +91,7 @@ public class OldmanMovement : MonoBehaviour
                     }
                 break;
 
-                case 3: // links
+                case 3:
                     myRigidbody.velocity = new Vector2(-moveSpeed, 0);
                       if(hasWalkZone && transform.position.x < minWalkPoint.x)
                     {
@@ -107,7 +102,7 @@ public class OldmanMovement : MonoBehaviour
             }
 
         }
-        else { // tritt ein sobald eine Walkzonegrenze erreicht wurde
+        else {
             waitCounter -= Time.deltaTime;
 
             myRigidbody.velocity = Vector2.zero;
@@ -118,7 +113,7 @@ public class OldmanMovement : MonoBehaviour
         }
         
     }
-    // Zufällige Zahlenauswahl
+
     public void ChooseDirection(){
         WalkDirection = Random.Range(0,4);
         isWalking = true;
